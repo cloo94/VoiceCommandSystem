@@ -1,0 +1,8 @@
+#!/bin/bash
+
+zipcode=`cat $HOME/.misc | awk -F'zipcode==' '{print $2}'`
+result=`python /home/pi/PiAUISuite/Misc/getweather.py "$zipcode"`
+
+echo "$result"
+tts "x$result"
+
